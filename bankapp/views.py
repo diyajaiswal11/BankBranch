@@ -21,7 +21,7 @@ class ImageUploadView(APIView):
             serializer.save()
             msg={
             "message":"success",
-            "image":serializer.data
+            "output":"10"
             }
             return JsonResponse(msg, status=status.HTTP_201_CREATED)
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
