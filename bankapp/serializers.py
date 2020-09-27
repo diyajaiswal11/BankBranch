@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from .models import Bankbranch
+from .models import ImageUpload
 
-class BankbranchSerializer(serializers.ModelSerializer):
+class ImageUploadSerializer(serializers.ModelSerializer):
     
     class Meta:
-        model = Bankbranch
-        fields = ('bank_name','image')
+        model = ImageUpload
+        fields = ('image',)
 

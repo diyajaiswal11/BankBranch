@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Bankbranch
+from .models import ImageUpload
 # Register your models here.
 
 
-admin.site.register(Bankbranch)
+admin.site.register(ImageUpload)
 
 
