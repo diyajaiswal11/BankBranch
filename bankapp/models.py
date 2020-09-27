@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Bankbranch(models.Model):
-    bank_name=models.CharField(max_length=49)
+    bank_name=models.CharField(max_length=49,null=True,blank=True)
     image=models.ImageField(upload_to='images/',null=True,blank=True)
 
     def __str__(self):
