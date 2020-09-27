@@ -5,5 +5,5 @@ class BankbranchSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Bankbranch
-        fields = ('ifsc','bank_id','branch','address','city','district','state','bank_name')
+        fields = ('bank_name','image')
 
