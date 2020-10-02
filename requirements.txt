@@ -1,3 +1,6 @@
+-f https://download.pytorch.org/whl/torch_stable.html
+torch==1.6.0
+torchvision==0.7.0
 asgiref==3.2.10
 Django==3.0.8
 djangorestframework==3.11.0
