@@ -1,6 +1,11 @@
-import torch
+import pickle
 from torchvision import transforms
 from PIL import Image
+
+def softmax(x):
+    """Compute softmax values for each sets of scores in x."""
+    e_x = np.exp(x - np.max(x))
+    return e_x / e_x.sum()
 
 
 img_size = 224
@@ -13,13 +18,15 @@ transform = transforms.Compose([
                         std=[0.229, 0.224, 0.225])
 ])
 
-model = torch.load('model.pth', map_location=device)
+model = pickle.load(open('./new_model.sav', 'rb'))
 
 def predict(img_path):
     img = Image.open(img_path)
     img = transform(img)
     img = img.view(1, 3, img_size, img_size)
     out = model(img)
-    prob, pred = torch.max(torch.softmax(out, dim=1), dim=1)
+    out=out.detach().numpy()
+    a=softmax(out)
+    prob, pred = np.max(a),np.argmax(a)
     labels = ['Benign', 'Malignant']
     return labels[pred], prob.item() * 100
