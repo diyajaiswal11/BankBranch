@@ -29,4 +29,4 @@ def predict(img_path):
     a=softmax(out)
     prob, pred = np.max(a),np.argmax(a)
     labels = ['Benign', 'Malignant']
-    return labels[pred], prob.item() * 100
+    return pred, prob * 100
