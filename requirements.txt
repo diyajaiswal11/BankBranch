@@ -1,10 +1,8 @@
 -f https://download.pytorch.org/whl/torch_stable.html
-pickle5==0.0.11
-torchvision==0.7.0
+keras
 asgiref==3.2.10
 Django==3.0.8
 djangorestframework==3.11.0
-Pillow==7.2.0
 psycopg2==2.8.5
 pytz==2020.1
 sqlparse==0.3.1
