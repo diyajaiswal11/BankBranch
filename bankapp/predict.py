@@ -1,4 +1,4 @@
-import pickle
+from pickle5 import pickle
 from torchvision import transforms
 from PIL import Image
 
