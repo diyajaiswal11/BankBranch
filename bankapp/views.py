@@ -21,7 +21,7 @@ class ImageUploadView(APIView):
         if serializer.is_valid():
             serializer.save()
             img_path=serializer.data['image'] # (this is image path)
-            prob, pred =predict(img_path)
+            prob=predict(img_path)
             msg={
             "message":"success",
             "output":prob
