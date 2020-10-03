@@ -5,7 +5,7 @@ from .serializers import ImageUploadSerializer
 from django.views import View
 from rest_framework import status
 from rest_framework.views import APIView
-from predict import predict
+from .predict import predict
 # Create your views here.
 
 
