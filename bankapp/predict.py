@@ -1,4 +1,4 @@
-import pickle
+import torch
 from torchvision import transforms
 from PIL import Image
 
@@ -13,7 +13,7 @@ transform = transforms.Compose([
                         std=[0.229, 0.224, 0.225])
 ])
 
-model = pickle.load(open('new_model.sav', 'rb'))
+model = torch.load('model.pth', map_location=device)
 
 def predict(img_path):
     img = Image.open(img_path)
