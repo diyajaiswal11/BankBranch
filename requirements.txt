@@ -1,5 +1,5 @@
 -f https://download.pytorch.org/whl/torch_stable.html
-torch==1.6.0
+pickle
 torchvision==0.7.0
 asgiref==3.2.10
 Django==3.0.8
