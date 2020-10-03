@@ -5,6 +5,7 @@ from .serializers import ImageUploadSerializer
 from django.views import View
 from rest_framework import status
 from rest_framework.views import APIView
+from predict import predict
 # Create your views here.
 
 
@@ -19,10 +20,11 @@ class ImageUploadView(APIView):
         serializer = ImageUploadSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            #image_path=serializer.data['image']  (this is image path)
+            image_path=serializer.data['image']  (this is image path)
+            prob, pred =predict(img_path)
             msg={
             "message":"success",
-            "output":"10"
+            "output":prob
             }
             return JsonResponse(msg, status=status.HTTP_201_CREATED)
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
