@@ -1,7 +1,7 @@
 -f https://download.pytorch.org/whl/torch_stable.html
 Keras==2.4.3
 tensorflow==2.3.1 
-numpy==1.18.5
+numpy==1.22.0
 asgiref==3.2.10
 Django==3.0.8
 djangorestframework==3.11.0
